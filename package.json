@@ -1,0 +1,23 @@
+{
+  "name": "angular-form",
+  "version": "0.0.1",
+  "description": "Angular form task",
+  "scripts": {
+    "start": "supervisor server.js"
+  },
+  "repository": "",
+  "author": "Artem",
+  "devDependencies": {
+    "angular": "^1.4.8",
+    "angular-route": "^1.4.8",
+    "babel": "^4.7.16",
+    "babel-core": "^5.2.0",
+    "babel-loader": "^4.1.0",
+    "css-loader": "^0.9.1",
+    "express": "^4.13.3",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^0.4.2",
+    "style-loader": "^0.9.0",
+    "webpack": "^1.7.3"
+  }
+}
