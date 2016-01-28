@@ -2,7 +2,7 @@ var express = require('express');
 
 var app = express();
 
-app.get(['/', '/authentication', '/personal', '/sending'] , function(req,res){
+app.get(['/', '/authentication', '/personal', '/sending'] , function(req, res){
 	res.sendFile(__dirname + '/src/index.html');
 });
 

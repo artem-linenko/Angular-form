@@ -1,5 +1,5 @@
 // Teacher's javascript
-import styles from '../styles/style.scss';
+import styles from '../assets/styles/style.scss';
 import angular from 'angular';
 import angularRoute from 'angular-route';
 
@@ -10,6 +10,7 @@ require('./controllers/RegistrationController')(app);
 
 // Directives
 require('./directives/navigation')(app);
+require('./directives/passwordConfirm')(app);
 
 app.config(function($routeProvider, $locationProvider) {
 	$routeProvider.

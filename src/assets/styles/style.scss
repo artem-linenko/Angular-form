@@ -1,11 +1,11 @@
+$nav-color: #5b5b5b;
+$nav-color-active: #848484;
+
 * {
     box-sizing: border-box;
 }
 
 .navigation {
-    $nav-color: #5b5b5b;
-    $nav-color-active: #848484;
-
     padding: 0;
     list-style-type: none;
     font-family: arial;
@@ -53,6 +53,29 @@
             top: 0;
             left: 100%;
             z-index: 20;
+        }
+    }
+}
+
+#auth-form {
+    width: 50%;
+    margin: 0 auto;
+
+    input {
+        display: block;
+        height: 30px;
+        margin: 0 auto 15px auto;
+        padding: 5px;
+        border-radius: 5px;
+
+        &[type=submit] {
+            color: #fff;
+            background-color: green;
+            // background-color: #5b5b5b;
+
+            &:disabled {
+                background-color: #848484;
+            }
         }
     }
 }
