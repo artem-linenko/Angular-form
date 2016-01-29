@@ -2,8 +2,9 @@
 import styles from '../assets/styles/style.scss';
 import angular from 'angular';
 import angularRoute from 'angular-route';
+import angularUiValidate from 'angular-ui-validate';
 
-const app = angular.module('app', ['ngRoute']);
+const app = angular.module('app', ['ngRoute','ui.validate']);
 
 // Controllers
 require('./controllers/RegistrationController')(app);

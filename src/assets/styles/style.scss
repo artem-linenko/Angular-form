@@ -1,5 +1,6 @@
 $nav-color: #5b5b5b;
 $nav-color-active: #848484;
+$nav-color-passed: #3d993d;
 
 * {
     box-sizing: border-box;
@@ -26,6 +27,14 @@ $nav-color-active: #848484;
         width: 32%;
         margin: 0 1px;
 
+        &.passed {
+            background: $nav-color-passed;
+
+            &:after {
+                border-left-color: $nav-color-passed;
+            }
+        }
+        
         &.active {
             background: $nav-color-active;
 
@@ -67,11 +76,15 @@ $nav-color-active: #848484;
         margin: 0 auto 15px auto;
         padding: 5px;
         border-radius: 5px;
+        outline: none;
+        
+        &.invalid {
+            border: 1px solid red;
+        }
 
         &[type=submit] {
             color: #fff;
-            background-color: green;
-            // background-color: #5b5b5b;
+            background-color: #3d993d;
 
             &:disabled {
                 background-color: #848484;
