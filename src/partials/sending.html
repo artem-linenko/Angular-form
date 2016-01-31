@@ -2,27 +2,29 @@
 
 <ul id="info-list">
 	<li ng-click='showUser()'>
-		<h5>Login</h5>
+		<h4>Login</h4>
 		<p>{{user.auth.login}}</p>
 	</li>
 	<li>
-		<h5>Password</h5>
+		<h4>Password</h4>
 		<p>{{user.auth.password}}</p>
 	</li>
 	<li>
-		<h5>Email</h5>
+		<h4>Email</h4>
 		<p>{{user.auth.email}}</p>
 	</li>
 	<li>
-		<h5>Name</h5>
+		<h4>Name</h4>
 		<p>{{user.personal.name}}</p>
 	</li>
 	<li>
-		<h5>Birth Date</h5>
+		<h4>Birth Date</h4>
 		<p ng-bind="getFullDate()"></p>
 	</li>
 	<li>
-		<h5>Additional information</h5>
+		<h4>Additional information</h4>
 		<p>{{user.personal.addInfo}}</p>
 	</li>
 </ul>
+
+<input type="submit" class="send" ng-disabled="!user.auth.passed || !user.personal.passed" value="Send">

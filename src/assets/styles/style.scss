@@ -70,7 +70,7 @@ form {
     width: 50%;
     margin: 0 auto;
 
-    input, textarea {
+    input, textarea, label {
         display: block;
         height: 30px;
         margin: 0 auto 15px auto;
@@ -90,5 +90,39 @@ form {
                 background-color: #848484;
             }
         }
+    }
+    
+    textarea, label {
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+#info-list {
+    list-style-type: none;
+    margin-left: 20px;
+    padding: 0;
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    h4, p {
+        margin: 0;
+    }
+}
+
+input.send {
+    display: block;
+    height: 30px;
+    margin-left: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    background-color: #3d993d;
+
+    &:disabled {
+        background-color: #848484;
     }
 }

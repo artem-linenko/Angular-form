@@ -10,8 +10,9 @@
 		<span ng-show="persForm.uMail.$error.email">This email is not valid</span>
 	</div>
 
-	<label>Digits left: {{512 - persForm.addInfo.$viewValue.length}}<textarea name="addInfo" ng-model="user.personal.addInfo" placeholder="Additional information"  maxlength='512'>
-	</textarea></label>
+	<textarea name="addInfo" ng-model="user.personal.addInfo" placeholder="Additional information"  maxlength='512'>
+	</textarea>
+	<label for="addInfo">Digits left: {{512 - persForm.addInfo.$viewValue.length}}</label>
 
-	<input type="submit" class="submit" ng-disabled="persForm.$invalid">
+	<input type="submit" class="submit" ng-disabled="persForm.$invalid" value="Continue">
 </form>

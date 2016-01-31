@@ -10,8 +10,7 @@ const app = angular.module('app', ['ngRoute','ui.validate']);
 require('./controllers/RegistrationController')(app);
 
 // Directives
-require('./directives/navigation')(app);
-require('./directives/passwordConfirm')(app);
+// require('./directives/navigation')(app);
 
 app.config(function($routeProvider, $locationProvider) {
 	$routeProvider.

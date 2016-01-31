@@ -8,28 +8,30 @@ export default function(app) {
 
 		$scope.user = {
 			auth: {
-				login: 'qq',
-				email: 'a@gmail.com',
-				password: 'qqq',
-				confirm: 'qqq',
+				login: '',
+				email: '',
+				password: '',
+				confirm: '',
 				passed: false
 			},
 			personal: {
-				name: 'A',
+				name: '',
 				date: '',
-				addInfo: 'dssdfv',
+				addInfo: '',
 				passed: false
 			}
 		}
 
 		$scope.getFullDate = function() {
-			var date = $scope.user.personal.date,
-				y = date.getFullYear().toString(),
-				m = (date.getMonth()+1).toString(),
-   				d  = date.getDate().toString(),
-   				fullDate = m + '/' + d + '/' + y;
-   			
-   			return fullDate;
+			if ($scope.user.personal.date) {
+				var date = $scope.user.personal.date,
+					y = date.getFullYear().toString(),
+					m = (date.getMonth()+1).toString(),
+	   				d  = date.getDate().toString(),
+	   				fullDate = m + '/' + d + '/' + y;
+	   			
+	   			return fullDate;
+			}
 		}
 
 		$scope.moveToPersonal = function() {
@@ -37,7 +39,6 @@ export default function(app) {
 			$location.path('/personal');
 			userInfoService.auth = $scope.user.auth;
 			$scope.user = userInfoService;
-			console.log($scope.user);
 		}
 
 
@@ -46,14 +47,28 @@ export default function(app) {
 			$location.path('/sending');
 			userInfoService.personal = $scope.user.personal;
 			$scope.user = userInfoService;
-
-			console.log($scope.user);
 		}
 
-		$scope.showUser = function(a) {
-			$scope.user = userInfoService;
-			console.log($scope.user)
-			console.log(a)
-		}
+		// Navigation logic
+		$scope.activeTab = $location.path().substr(1);
+
+    	$scope.changePath = function(newPath) {
+			$location.path(newPath);
+    	}
+
+		$scope.$watch(function() {
+		    return $location.path();
+		}, function(path){
+			$scope.activeTab = path.substr(1);
+		});
+
+		$scope.onNavigationClick = function($event) {
+    		if ($event.target.tagName != "LI") return;
+    			
+			var tabName = $event.target.getAttribute('name');
+			$scope.activeTab = tabName;
+			
+			$scope.changePath('/' + tabName);
+    	}
 	})
 } 
