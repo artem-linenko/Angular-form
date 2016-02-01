@@ -3,9 +3,10 @@
 <form name="persForm" id="pers-form"  ng-submit="moveToSending()">
 
 	<input type="text" ng-model="user.personal.name" name="name" placeholder="Name" required ng-class="{invalid: persForm.name.$touched && persForm.name.$error.required}">
-
-	<input type="date" ng-model="user.personal.date" name="date" placeholder="Birth date" required
-			ng-class="{invalid: persForm.date.$touched && (persForm.date.$error.required || persForm.date.$error.date)}">
+	
+	<input type="text" ng-model="user.personal.date" name="date" placeholder="Birth date" required
+		onfocus="(this.type='date')" onblur="(this.type='text')"
+		ng-class="{invalid: persForm.date.$touched && (persForm.date.$error.required || persForm.date.$error.date)}">
 	<div ng-show="persForm.$submitted || persForm.uMail.$touched">
 		<span ng-show="persForm.uMail.$error.email">This email is not valid</span>
 	</div>

@@ -1,32 +1,41 @@
 export default function(app) {
-	return app.directive('navigation', function($location) {
+	var userInfoService = require('../services/userInfoService')(app);
+
+	return app.directive('navigation', function($location, $rootScope, userInfoService) {
 		return {
 		  	restrict: "E",
 		    templateUrl: "./partials/navigation.html",
-		    controller: function($scope, $location, $rootScope) {
-		    	$scope.activeTab = $location.path().substr(1);
+		    link: function($scope, element, attrs) {
+				
+				//Initially always redirect to '/authentication', other tabs are forbidden	    	
+		    	$scope.activeTab = 'authentication';
+		    	$location.path('/' + $scope.activeTab);
 
-		    	$scope.changePath = function(newPath) {
-	    			$location.path(newPath);
-	    			$rootScope.$apply();
+		    	$scope.changeTab = function(tabName) {
+		    		if (userInfoService.allowTabView(tabName)) {
+		    			$location.path('/' + tabName);
+		    			$rootScope.$apply();
+
+	    				$scope.activeTab = tabName;
+		    		}
 		    	}
 
+		    	// Watcher for browser back-forward navigation
 				$scope.$watch(function() {
 				    return $location.path();
 				}, function(path){
 					$scope.activeTab = path.substr(1);
+					$scope.userPermissions = userInfoService.userPermissions;
 				});
-		    },
-		    link: function($scope, element, attrs) {
+
 		    	element.on('click', function($event) {
-		    		if ($event.target.tagName != "LI") return;
+		    		if ($event.target.tagName == "LI") {
+		    			var tabName = $event.target.getAttribute('name');
 		    			
-	    			var tabName = $event.target.getAttribute('name');
-	    			$scope.activeTab = tabName;
-	    			
-	    			$scope.changePath('/' + tabName);
+		    			$scope.changeTab(tabName);
+		    		}
 		    	});
 		    }
- 		  }
+ 		 }
 	})
 } 

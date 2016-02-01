@@ -6,7 +6,7 @@
   </head>
 
   <body ng-app="app">
-	<div class="wrapper" ng-controller='RegistrationController'>
+<!-- 	<div class="wrapper" ng-controller='RegistrationController'>
 		<ul class="navigation" ng-click="onNavigationClick($event)">
 			<li name="authentication"
 				ng-class="{active: activeTab == 'authentication', passed: user.auth.passed == true}">Authentication</li>
@@ -14,11 +14,11 @@
 				ng-class="{active: activeTab == 'personal', passed: user.personal.passed == true}">Personal</li>
 			<li name="sending" 
 				ng-class="{active: activeTab == 'sending'}">Confirmation</li>
-		</ul>
-	    <!-- <navigation></navigation> -->
+		</ul> -->
+<!-- 	</div> -->
+	    <navigation></navigation>
 
 	  	<div ng-view></div>
-	</div>
     <script src="bundle.js"></script>
   </body>
 </html>

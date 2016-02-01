@@ -26,6 +26,7 @@ $nav-color-passed: #3d993d;
         border-bottom: 1px solid #666;
         width: 32%;
         margin: 0 1px;
+        cursor: pointer;
 
         &.passed {
             background: $nav-color-passed;

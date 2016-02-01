@@ -19,7 +19,7 @@
 	</li>
 	<li>
 		<h4>Birth Date</h4>
-		<p ng-bind="getFullDate()"></p>
+		<p>{{user.personal.date}}</p>
 	</li>
 	<li>
 		<h4>Additional information</h4>
@@ -27,4 +27,4 @@
 	</li>
 </ul>
 
-<input type="submit" class="send" ng-disabled="!user.auth.passed || !user.personal.passed" value="Send">
+<input type="submit" class="send" ng-disabled="!allowSendingRequest" value="Send">
