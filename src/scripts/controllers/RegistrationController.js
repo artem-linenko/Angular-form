@@ -14,10 +14,14 @@ export default function(app) {
 		}
 
 
-		$scope.moveToSending = function(a) {
+		$scope.moveToSending = function() {
 			userInfoService.userInstance = $scope.user;
 			userInfoService.userPermissions.personal = true;
 			$location.path('/sending');
+		}
+
+		$scope.registerUser = function() {
+			userInfoService.registerUser();
 		}
 	})
 } 

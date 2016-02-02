@@ -6,9 +6,9 @@ module.exports = {
 		selection_wizard: './src/scripts/index.js'
 	},
 	output: {
-		path: __dirname + '/src',
-		filename: 'bundle.js',
-		publicPath: '/src'
+		path: __dirname + '/src/build',
+		filename: 'register.js',
+		publicPath: '/src/build'
 	},
 	module: {
         loaders: [

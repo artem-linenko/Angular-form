@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Registration form</title>
-    <style src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></style>
-  </head>
+	<head>
+		<title>Registration form</title>
+		<style src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></style>
+	</head>
 
-  <body ng-app="app">
-<!-- 	<div class="wrapper" ng-controller='RegistrationController'>
-		<ul class="navigation" ng-click="onNavigationClick($event)">
-			<li name="authentication"
-				ng-class="{active: activeTab == 'authentication', passed: user.auth.passed == true}">Authentication</li>
-			<li name="personal" 
-				ng-class="{active: activeTab == 'personal', passed: user.personal.passed == true}">Personal</li>
-			<li name="sending" 
-				ng-class="{active: activeTab == 'sending'}">Confirmation</li>
-		</ul> -->
-<!-- 	</div> -->
+	<body ng-app="app">
 	    <navigation></navigation>
 
 	  	<div ng-view></div>
-    <script src="bundle.js"></script>
+    <script src="build/register.js"></script>
   </body>
 </html>

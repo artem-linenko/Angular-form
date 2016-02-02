@@ -3,7 +3,7 @@
 <ul id="info-list">
 	<li ng-click='showUser()'>
 		<h4>Login</h4>
-		<p>{{user.auth.login}}</p>
+		<p>{{user.auth.username}}</p>
 	</li>
 	<li>
 		<h4>Password</h4>
@@ -19,12 +19,12 @@
 	</li>
 	<li>
 		<h4>Birth Date</h4>
-		<p>{{user.personal.date}}</p>
+		<p>{{user.personal.birthDate}}</p>
 	</li>
 	<li>
 		<h4>Additional information</h4>
-		<p>{{user.personal.addInfo}}</p>
+		<p>{{user.personal.additionalInfo}}</p>
 	</li>
 </ul>
 
-<input type="submit" class="send" ng-disabled="!allowSendingRequest" value="Send">
+<input type="submit" class="send" ng-disabled="!allowSendingRequest" value="Send" ng-click="registerUser()">

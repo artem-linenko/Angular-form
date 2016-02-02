@@ -2,7 +2,7 @@
 
 <form name="authForm" id="auth-form"  ng-submit="moveToPersonal()">
 
-	<input type="text" ng-model="user.auth.login" name="login" placeholder="Login" required ng-class="{invalid: authForm.login.$touched && authForm.login.$error.required}">
+	<input type="text" ng-model="user.auth.username" name="username" placeholder="Login" required ng-class="{invalid: authForm.username.$touched && authForm.username.$error.required}">
 
 	<input type="email" ng-model="user.auth.email" name="uMail" placeholder="Email" required
 			ng-class="{invalid: authForm.uMail.$touched && (authForm.uMail.$error.required || authForm.uMail.$error.email)}">
