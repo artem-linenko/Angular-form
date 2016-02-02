@@ -4,17 +4,23 @@ $nav-color-passed: #3d993d;
 
 * {
     box-sizing: border-box;
+    font-size: 14px;
 }
 
 .navigation {
     padding: 0;
     list-style-type: none;
     font-family: arial;
-    font-size: 12px;
     clear: both;
     line-height: 1em;
     margin: 0 -1px;
     text-align: center;
+
+    &:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
 
     li {
         float: left;
@@ -69,8 +75,8 @@ $nav-color-passed: #3d993d;
 
 form {
     width: 50%;
-    margin: 0 auto;
-
+    margin: 20px auto;
+    
     input, textarea, label {
         display: block;
         height: 30px;
